@@ -31,14 +31,15 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
 							<StackPanel Orientation="Horizontal">
-								<StackPanel Height="100" Width="100">
-									<Image Height="65" Width="65" Source="http://127.0.0.1:8000/static/acer.png"/>
-								</StackPanel>
-								<StackPanel Margin="-10,-50,-10,0" Width="432" Height="78">
+								
+								<StackPanel Margin="-10,-50,-10,0" Width="400" Height="78">
 									<TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
 									<TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
 								</StackPanel>
-							</StackPanel>
+                                <StackPanel Height="100" Width="100" Margin="-40,0,0,0">
+                                    <Image Height="50" Width="65" Source="/arrowr.png"/>
+                                </StackPanel>
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
