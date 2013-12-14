@@ -48,6 +48,16 @@ namespace BytovuhaBy
             return loginpage.webCheck.SaveToString();
         }
 
+        public string GetPageOnce(string path)
+        {
+            getPageReady = false;
+            loginpage.webCheckOneTime.Navigate(new Uri(path));
+            loginpage.webCheckOneTime.LoadCompleted += webCheck_LoadCompleted;
+            //while (!getPageReady) ;
+            System.Threading.Thread.Sleep(100);
+            return loginpage.webCheckOneTime.SaveToString();
+        }
+
         public string GetPageGoods(string path)
         {
             getPageReady = false;

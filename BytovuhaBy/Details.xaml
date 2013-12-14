@@ -29,14 +29,15 @@
         <!--ContentPanel - place additional content here-->
         <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel Orientation="Horizontal">
-                <Image Height="150" Width="150"></Image>
+                <Rectangle Margin="-300,-300,-150,-300" Fill="White" x:Name="imgRect" Height="150" Width="150"/>
+                <Image x:Name="imgPic" Height="150" Width="150"></Image>
                 <StackPanel>
                     <TextBlock x:Name="lblName" TextAlignment="Left" Style="{StaticResource PhoneTextTitle2Style}" Width="300">Samsung R861</TextBlock>
                 <TextBlock x:Name="lblCategory" TextAlignment="Left" Width="300">Стиральная машина</TextBlock>
                 </StackPanel>
             </StackPanel>
             <TextBlock x:Name="lblDesc" Width="430" Height="380" Style="{StaticResource PhoneTextTitle2Style}" TextAlignment="Left" TextWrapping="Wrap">Стиральная машина</TextBlock>
-            <Button>buy</Button>
+            <Button x:Name="btnBuy" Tap="btnBuy_Tap">buy</Button>
             
         </StackPanel>
     </Grid>

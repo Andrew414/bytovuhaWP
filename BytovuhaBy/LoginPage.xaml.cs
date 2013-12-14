@@ -89,6 +89,8 @@ namespace BytovuhaBy
                 else
                 {
                     CustomerId = customerId;
+                    helper.mainpage.customerId = CustomerId;
+                    App.ViewModel.LoadBasket(customerId);
                     this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
                 }
             }

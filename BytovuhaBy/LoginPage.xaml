@@ -38,6 +38,7 @@
                 <phone:WebBrowser Visibility="Collapsed" x:Name="webCheck" Height="200"/>
                 <phone:WebBrowser Visibility="Collapsed" x:Name="webCheckGoods" Height="200"/>
                 <phone:WebBrowser Visibility="Collapsed" x:Name="webCheckBuyings" Height="200"/>
+                <phone:WebBrowser Visibility="Collapsed" x:Name="webCheckOneTime" Height="200"/>
                 <TextBlock x:Name="lblWrong" TextAlignment="Center" Style="{StaticResource PhoneTextGroupHeaderStyle}" Foreground="Black" Text="Неверный логин или пароль"  Margin="12,0,0,0"></TextBlock>
                 <StackPanel Margin="0,200,0,0">
                     <TextBlock x:Name="lblServer" Margin="12,0,0,0">Сервер</TextBlock>
