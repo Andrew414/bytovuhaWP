@@ -19,24 +19,24 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
  
         <!--Panorama control-->
-        <controls:Panorama Title="Бытовуха.by">
+        <controls:Panorama  x:Name="pnrAma" Title="Бытовуха.by">
             <controls:Panorama.Background>
                 <ImageBrush ImageSource="PanoramaBackground.png"/>
             </controls:Panorama.Background>
  
             <!--Panorama item one-->
-            <controls:PanoramaItem Header="каталог">
+            <controls:PanoramaItem  x:Name="pnrFirst" x:Uid="1" Header="каталог">
                 <!--Double line list with text wrapping-->
-                <ListBox Name="lbxCatalog" ItemsSource="{Binding Items}" Margin="0,0,-12,0">
+                <ListBox Name="lbxCatalog" ItemsSource="{Binding Categories}" Margin="0,0,-12,0" Tap="lbxCatalog_Tap" SelectionChanged="lbxCatalog_SelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
 							<StackPanel Orientation="Horizontal">
 								
 								<StackPanel Margin="-10,-50,-10,0" Width="400" Height="78">
-									<TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-									<TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+									<TextBlock Width="500" Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+									<!--<TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
 								</StackPanel>
-                                <StackPanel Height="100" Width="100" Margin="-40,0,0,0">
+                                <StackPanel Height="100" Width="100" Margin="-25,0,0,0">
                                     <Image Height="50" Width="65" Source="/arrowr.png"/>
                                 </StackPanel>
                             </StackPanel>
@@ -47,8 +47,9 @@
  
             <!--Panorama item two-->
             <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
-            <controls:PanoramaItem Header="категория">
+            <controls:PanoramaItem x:Name="pnrSecond" x:Uid="2" Header="категория">
                 <!--Double line list with image placeholder and text wrapping-->
+                
                 <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>

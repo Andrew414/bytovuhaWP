@@ -15,23 +15,59 @@ namespace BytovuhaBy
 {
     public class ItemViewModel : INotifyPropertyChanged
     {
-        //private Image _img;
+        private Image _img;
 
-        //public Image Image
-        //{
-        //    get
-        //    {
-        //        return _img;
-        //    }
-        //    set
-        //    {
-        //        if (value != _img)
-        //        {
-        //            _img = value;
-        //            NotifyPropertyChanged("Image");
-        //        }
-        //    }
-        //} 
+        public Image Image
+        {
+            get
+            {
+                return _img;
+            }
+            set
+            {
+                if (value != _img)
+                {
+                    _img = value;
+                    NotifyPropertyChanged("Image");
+                }
+            }
+        }
+
+        private string _lineFour;
+
+        public string LineFour
+        {
+            get
+            {
+                return _lineFour;
+            }
+            set
+            {
+                if (value != _lineFour)
+                {
+                    _lineFour = value;
+                    NotifyPropertyChanged("LineFour");
+                }
+            }
+        }
+
+        private string _imgurl;
+
+        public string ImgUrl
+        {
+            get
+            {
+                return _imgurl;
+            }
+            set
+            {
+                if (value != _imgurl)
+                {
+                    _imgurl = value;
+                    NotifyPropertyChanged("ImgUrl");
+                }
+            }
+        } 
 
         private string _lineOne;
         /// <summary>

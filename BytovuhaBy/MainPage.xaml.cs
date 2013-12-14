@@ -15,6 +15,9 @@ namespace BytovuhaBy
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private int customerId;
+        private Helper helper;
+
         // Constructor
         public MainPage()
         {
@@ -25,15 +28,35 @@ namespace BytovuhaBy
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
         }
 
+        protected override void OnNavigatingFrom(System.Windows.Navigation.NavigatingCancelEventArgs e)
+        {
+            if (e.Uri.IsAbsoluteUri == true && e.Uri.AbsoluteUri == "/LoginPage.xaml")
+            {
+                Helper.GetHelper().ExitApp();
+            }
+        }
+
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            helper = Helper.GetHelper();
+            this.customerId = helper.loginpage.CustomerId;
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();
-                App.ViewModel.Items.Add(new ItemViewModel() { LineOne="ololo", LineTwo="trololo", LineThree="hey!" });
-                MessageBox.Show(lbxCatalog.Items.Count.ToString());
             }
+        }
+
+        private void lbxCatalog_Tap(object sender, GestureEventArgs e)
+        {
+            
+        }
+
+        private void lbxCatalog_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //this.NavigationService.Navigate(new Uri("/MainPage.xaml?id=2", UriKind.Relative));
+            pnrAma.DefaultItem = pnrSecond;
+            this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
     }
 }
