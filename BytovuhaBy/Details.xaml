@@ -37,7 +37,7 @@
                 </StackPanel>
             </StackPanel>
             <TextBlock x:Name="lblDesc" Width="430" Height="380" Style="{StaticResource PhoneTextTitle2Style}" TextAlignment="Left" TextWrapping="Wrap">Стиральная машина</TextBlock>
-            <Button x:Name="btnBuy" Tap="btnBuy_Tap">buy</Button>
+            <Button x:Name="btnBuy" Tap="btnBuy_Tap">добавить в корзину</Button>
             
         </StackPanel>
     </Grid>

@@ -108,6 +108,15 @@ namespace BytovuhaBy
             string address = "http://" + helper.loginpage.tbxServer.Text + "/wppay/" + helper.mainpage.customerId.ToString();
             //MessageBox.Show(address);
             helper.GetPageOnce(address);
+            if (App.ViewModel.BasketItems.Count > 0)
+            {
+                MessageBox.Show("Платеж успешно проведен!", "Бытовуха.by", MessageBoxButton.OK);
+            }
+            else
+            {
+                MessageBox.Show("Ваша корзина пуста!", "Бытовуха.by", MessageBoxButton.OK);
+                return;
+            }
             App.ViewModel.ClearBasket();
             pnrAma.DefaultItem = pnrFirst;
             this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
