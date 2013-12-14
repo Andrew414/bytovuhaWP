@@ -23,6 +23,9 @@ namespace BytovuhaBy
         {
             InitializeComponent();
 
+            helper = Helper.GetHelper();
+            helper.mainpage = this;
+
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
@@ -56,7 +59,19 @@ namespace BytovuhaBy
         {
             //this.NavigationService.Navigate(new Uri("/MainPage.xaml?id=2", UriKind.Relative));
             pnrAma.DefaultItem = pnrSecond;
+            pnrSecond.Header = Product.CategoryToRussian((e.AddedItems[0] as ItemViewModel).LineFour).ToLower();
+            App.ViewModel.LoadGoods((e.AddedItems[0] as ItemViewModel).LineFour);
             this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+            ItemViewModel m = e.AddedItems[0] as ItemViewModel;
+            helper.details.setup(int.Parse(m.LineFive), m.LineOneNoCat, m.LineFour, m.LineCat, m.ImgUrl);
+            helper.details.display();
+
+            this.NavigationService.Navigate(new Uri("/Details.xaml", UriKind.Relative));
         }
     }
 }

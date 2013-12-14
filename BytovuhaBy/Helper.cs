@@ -21,6 +21,8 @@ namespace BytovuhaBy
         public CookieContainer cookie;
 
         public LoginPage loginpage;
+        public MainPage mainpage;
+        public Details details;
         public bool getPageReady = false;
 
         //private void myBrowser_LoadCompleted(object sender, NavigationEventArgs e)

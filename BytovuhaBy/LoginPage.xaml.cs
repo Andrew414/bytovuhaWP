@@ -22,6 +22,18 @@ namespace BytovuhaBy
             //webCheck.Navigate(new Uri("http://" + tbxServer.Text + "/"));
             helper = Helper.GetHelper();
             helper.loginpage = this;
+
+            new MainPage();
+            new Details();
+            LoadData();
+        }
+
+        public void LoadData()
+        {
+            if (!App.ViewModel.IsDataLoaded)
+            {
+                App.ViewModel.LoadData();
+            }
         }
 
         private void tbxPass_Tap(object sender, System.Windows.Input.GestureEventArgs e)

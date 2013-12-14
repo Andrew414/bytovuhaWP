@@ -51,6 +51,75 @@ namespace BytovuhaBy
             }
         }
 
+        private string _lineFive;
+
+        public string LineFive
+        {
+            get
+            {
+                return _lineFive;
+            }
+            set
+            {
+                if (value != _lineFive)
+                {
+                    _lineFive = value;
+                    NotifyPropertyChanged("LineFive");
+                }
+            }
+        }
+
+        private string _lineonenocat;
+        public string LineOneNoCat
+        {
+            get
+            {
+                return _lineonenocat;
+            }
+            set
+            {
+                if (value != _lineonenocat)
+                {
+                    _lineonenocat = value;
+                    NotifyPropertyChanged("LineOneNoCat");
+                }
+            }
+        }
+
+        private string _linecat;
+        public string LineCat
+        {
+            get
+            {
+                return _linecat;
+            }
+            set
+            {
+                if (value != _linecat)
+                {
+                    _linecat = value;
+                    NotifyPropertyChanged("LineCat");
+                }
+            }
+        }
+
+        private string _lineinfo;
+        public string LineInfo
+        {
+            get
+            {
+                return _lineinfo;
+            }
+            set
+            {
+                if (value != _lineinfo)
+                {
+                    _lineinfo = value;
+                    NotifyPropertyChanged("LineInfo");
+                }
+            }
+        }
+
         private string _imgurl;
 
         public string ImgUrl
